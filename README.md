@@ -70,3 +70,101 @@ public class Retangulo {
     
     
 }
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+outro dia
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+package jokepo;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class JokePo {
+    
+public static void main(String[] args) {
+    
+    int empate = 0;
+    int vitoriaMaquina = 0;
+    int vitoriaUsuario = 0;
+    int escolhaDoUsuario;
+    int paraParar;
+    int sorteioJokePoMaquina;
+    
+    Random random = new Random();
+    
+    
+    Scanner teclado = new Scanner(System.in);
+    //0 pedra 1 papel 2 tesoura
+    System.out.println("Digite seu nome");
+    String nome = teclado.nextLine();
+
+    do{
+        
+        sorteioJokePoMaquina = random.nextInt(3);
+        
+        
+        System.out.println("\nEssa são as opções:");
+        System.out.println("\n0 para Pedra");
+        System.out.println("1 para papel");
+        System.out.println("2 para tesoura");
+        System.out.println("3 para sair");
+        System.out.println("");
+        System.out.println("O placar está");
+        System.out.println("\nEmpate: " + empate);
+        System.out.println(nome+ ": " + vitoriaUsuario);
+        System.out.println("maquina: " + vitoriaMaquina);
+        
+        
+
+        System.out.println("\nDigite 0 para pedra \nDigite 1 para papel \nDigite 2 para tesoura \nDigite 3 para sair ");
+        escolhaDoUsuario = teclado.nextInt();
+
+        
+        if(sorteioJokePoMaquina == escolhaDoUsuario){
+            empate++;
+            System.out.println("Empatou!!\nMaquina Digitou:"+sorteioJokePoMaquina);
+        }
+        else if(sorteioJokePoMaquina == 0  && escolhaDoUsuario == 1){
+            vitoriaUsuario++;
+            System.out.println("Usuario ganhou\nMaquina Digitou:"+sorteioJokePoMaquina);
+        }
+        else if(sorteioJokePoMaquina == 0 && escolhaDoUsuario == 2){
+            vitoriaMaquina++;
+            System.out.println("Vitoria da maquina\nMaquina Digitou:"+sorteioJokePoMaquina);
+        }
+        else if(sorteioJokePoMaquina == 1 && escolhaDoUsuario == 0){
+            vitoriaMaquina++;
+            System.out.println("Vitoria da maquina\nMaquina Digitou:"+sorteioJokePoMaquina);
+        }
+        else if(sorteioJokePoMaquina == 1 && escolhaDoUsuario == 2){
+            vitoriaUsuario++;
+            System.out.println("Usuario ganhou\nMaquina Digitou:"+sorteioJokePoMaquina);
+        }
+        else if(sorteioJokePoMaquina == 2 && escolhaDoUsuario == 0){
+            vitoriaUsuario++;
+            System.out.println("Usuario ganhou\nMaquina Digitou:"+sorteioJokePoMaquina);
+        }
+        else if(sorteioJokePoMaquina == 2 && escolhaDoUsuario == 1){
+            vitoriaMaquina++;
+            System.out.println("Vitoria da maquina\nMaquina Digitou:"+sorteioJokePoMaquina);
+        }
+        
+    } while(escolhaDoUsuario != 3);
+   
+    
+    
+    
+    }
+    
+}
+
